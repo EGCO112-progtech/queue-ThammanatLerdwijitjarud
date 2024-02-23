@@ -9,7 +9,7 @@
 
 struct node
 {
-    int data;
+    int menu, num;
     struct node *nextPtr;
 };
 

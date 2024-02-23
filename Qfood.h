@@ -6,10 +6,11 @@ typedef struct {
 }Queue;
 
 
-void enqueue_struct(Queue* q, int x){
+void enqueue_struct(Queue* q, int x, int y){
   Node *new_node=(Node*) malloc(sizeof(Node));
 if(new_node!=NULL){
   new_node->data=x;
+  new_node->num=y;
   new_node->nextPtr=NULL;
   if(q->size==0)
   {
@@ -21,7 +22,8 @@ if(new_node!=NULL){
   }
   q->tailPtr=new_node;
   q->size++;
-  // printf("enQ %d\n",x);
+  printf("size = %d\n",q->size);
+  printf("enQ : menu %d  num %d\n",x,y);
   /*Finish enqueue */
  }
 }
@@ -41,7 +43,7 @@ int dequeue_struct(Queue *q){
         /*Finish dequeue */
     return value;
    }
-   else printf("Empty queue\n");
+   else printf("Empty queue");
    return 0;
 }
 
